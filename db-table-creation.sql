@@ -62,7 +62,7 @@ CREATE TABLE Class_enrollment (
 );
 
 CREATE TABLE Invoice (
-    invoice_id INT
+    invoice_id INT,
     student_id INT,
     payment_total FLOAT(8, 2),
     payment_date DATE
