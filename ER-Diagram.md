@@ -1,2 +1,2 @@
 # ER Diagram
-![Database ER Diagram](https://drive.google.com/file/d/1gfIbEDCCNGAzrqRh3KfvsCmBWJqcmxpp)
+<img src="/sharonv153/Online-Course-Management-System/blob/main/Online%20Course%20Management%20System%20ER%20Diagram.png?raw=true">
