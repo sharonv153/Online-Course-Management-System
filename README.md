@@ -11,7 +11,7 @@ The online course management system is a projected I created with the goal to de
 <ul>
   <li>Demonstrate my knowledge of database design principles by designing a database and showing data flow through relationships</li>
   <li>Show knowledge of MySQL by writing queries to create databases and priniciples of database designs</li>
-  <li>Prove knowledge of MySQL by data manipulation, transformation, and extraction</li>
+  <li>Exhibit knowledge on data manipulation, transformation, and extraction through SQL scripting</li>
 </ul>
 
 ### Some aspects to consider with this platform are the following:
