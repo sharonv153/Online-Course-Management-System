@@ -14,7 +14,7 @@ CREATE TABLE Course_creator (
 
 CREATE TABLE Student (
     student_id INT,
-    firstn_name VARCHAR(255),
+    first_name VARCHAR(255),
     last_name VARCHAR(255),
     birth_date DATE,
     address_line_1 VARCHAR(255),
