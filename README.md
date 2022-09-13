@@ -14,7 +14,7 @@ The online course management system is a projected I created with the goal to de
   <li>Prove knowledge of MySQL by data manipulation, transformation, and extraction</li>
 </ul>
 
-### Some aspects to consider with this platform are the next:
+### Some aspects to consider with this platform are the following:
 
 <ul>
   <li>The courses are created by independent creators</li>
@@ -34,24 +34,24 @@ The online course management system is a projected I created with the goal to de
 ## Entities
 
 <ul>
-  <li><em>Students</em> tracks every student that creates an account on the website. Whether they subscribe or not a unique id is created, and their information is saved.</li>
-  <li><em>Course creator</em> holds all the information of the course creator. </li>
-  <li><em>Course</em> will contain all the information essential for tracking the course and who created it.</li>
-  <li><em>Modules</em> will show the information that relates to the course and all the modules or sections that belong to each course.</li>
-  <li><em>Class enrollment</em> will help match and track which students join which course.</li>
-  <li><em>Assignment</em> keeps a record of the list of assignments associated with each module and the total points that a student can get with each assignment.</li>
-  <li><em>Exam</em> keeps a record of the list of exams associated with each module and the total points each one is worth.</li>
-  <li><em>Invoice</em> will track the students that make their monthly payment thus keeping their active status on the website.</li>
-  <li><em>Assignment submission</em> matches the assignments for each module and tracks which student submitted it and how many points they earned.</li>
-  <li><em>Exam submission</em> matches the exams submissions of each student for each module. Tracks the submission date, time, and how many points they earned.</li>
-  <li><em>Module completion</em> will track all the students that completed a course, their total points earned, and their final score.</li>
-  <li><em>Course subscribers</em> will keep track of which students are enrolled in which courses.</li>
-  <li><em>Course activity</em> will track if a student is still enrolled in a course every month and if they have a paid account.</li>
+  <li><em>Students:</em> tracks every student that creates an account on the website. Whether they subscribe or not a unique id is created, and their information is saved.</li>
+  <li><em>Course creator:</em> holds all the information of the course creator. </li>
+  <li><em>Course:</em> will contain all the information essential for tracking the course and who created it.</li>
+  <li><em>Modules:</em> will show the information that relates to the course and all the modules or sections that belong to each course.</li>
+  <li><em>Class enrollment:</em> will help match and track which students join which course.</li>
+  <li><em>Assignment:</em> keeps a record of the list of assignments associated with each module and the total points that a student can get with each assignment.</li>
+  <li><em>Exam:</em> keeps a record of the list of exams associated with each module and the total points each one is worth.</li>
+  <li><em>Invoice:</em> will track the students that make their monthly payment thus keeping their active status on the website.</li>
+  <li><em>Assignment submission:</em> matches the assignments for each module and tracks which student submitted it and how many points they earned.</li>
+  <li><em>Exam submission:</em> matches the exams submissions of each student for each module. Tracks the submission date, time, and how many points they earned.</li>
+  <li><em>Module completion:</em> will track all the students that completed a course, their total points earned, and their final score.</li>
+  <li><em>Course subscribers:</em> will keep track of which students are enrolled in which courses.</li>
+  <li><em>Course activity:</em> will track if a student is still enrolled in a course every month and if they have a paid account.</li>
 </ul>
 
 ## Views 
 The views have the purpose of collecting and putting data together while computing totals based of other table columns.
 The views in this project were created to avoid duplicating data and reduce the amount of data that gets stored.
 <ul>
-  <li><em>Creator Earnings</em> this view has the purpose of displaying how many active subscribers each course that belongs to each creator has and how much they will profit.</li>
+  <li><em>Creator Earnings:</em> this view has the purpose of displaying how many active subscribers each course that belongs to each creator has and how much they will profit.</li>
 </ul>
