@@ -7,22 +7,21 @@ CREATE TABLE Course_creator (
     first_name VARCHAR(255),
     last_name VARCHAR(255),
     birth_date DATE,
-    department VARCHAR(255),
     email VARCHAR(255),
     PRIMARY KEY creator_id
 );
 
 CREATE TABLE Student (
     student_id INT,
-    first_name VARCHAR(255),
+    firstn_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255),
     birth_date DATE,
+    email VARCHAR(255),
     address_line_1 VARCHAR(255),
     address_line_2 VARCHAR(255),
     city VARCHAR(255),
     state CHAR(2),
     zip CHAR(5),
-    email VARCHAR(255),
     PRIMARY KEY student_id
 );
 
@@ -33,8 +32,7 @@ CREATE TABLE Course (
     department VARCHAR(255),
     total_points INT,
     course_status VARCHAR(255),
-    instructor_id INT,
-    creator_id INT
+    creator_id INT,
     PRIMARY KEY course_id,
     FOREIGN KEY creator_id REFERENCES Course_creator(creator_id)
 );
@@ -53,9 +51,6 @@ CREATE TABLE Module (
 CREATE TABLE Class_enrollment (
     student_id INT,
     course_id INT,
-    start_date DATE,
-    end_date DATE,
-    points_earned INT,
     enrollment_date DATE,
     FOREIGN KEY student_id REFERENCES Student(student_id),
     FOREIGN KEY course_id REFERENCES Course(course_id)
@@ -65,7 +60,7 @@ CREATE TABLE Invoice (
     invoice_id INT,
     student_id INT,
     payment_total FLOAT(8, 2),
-    payment_date DATE
+    payment_date DATE,
     PRIMARY KEY invoice_id,
     FOREIGN KEY student_id REFERENCES Student(student_id)
 );
@@ -143,21 +138,3 @@ CREATE TABLE Student_Activity (
     FOREIGN KEY creator_id REFERENCES Course_creator (creator_id),
     FOREIGN KEY invoice_id REFERENCES Invoice(invoice_id)
 );
-
--- create a view to compute how many active subcribers each creator has per course 
--- and how much compensation they should receive for the month of August in 2021:
-
-CREATE VIEW Creator_earnings AS 
-    SELECT Course_creator.creator_id, Student_Activity.student_course_status,
-     Course_subscribers.course_id, count(Student_Activity.student_id) AS total_active_students, 
-     (count(Student_Activity.student_id)*creator_earning_per_subscriber) AS total_earnings
-    FROM Course_creator
-        JOIN Course
-            ON Course.creator_id = Course_creator.creator_id
-        JOIN Student_Activity
-            ON Course.course_id = Student_Activity.course_id
-        JOIN Course_subscribers 
-            ON Course_subscribers.student_id = Student_Activity.student_id
-    WHERE student_course_status = 'Active' AND activity_date BETWEEN '2021-08-01' AND '2021-08-31'
-    GROUP BY Course_creator.creator_id, Student_Activity.student_course_status
-    ORDER BY Course_creator.creator_id DESC;
