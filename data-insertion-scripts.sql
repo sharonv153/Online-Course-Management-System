@@ -61,12 +61,12 @@ VALUES (4000100,3000106,'Introduction to Social Media Marketing','You will learn
     (4000121,3000101,'Python Data Structures','Lists and Tuples. Sets. Dictionaries',2,60),
     (4000122,3000101,'Python Programming Fundamentals','Conditions and Branching. Loops. Functions. Objects and Classes.',3,60),
     (4000123,3000101,'Working with Data in Python','Reading files with open. Writing files with open. Loading data with Pandas. Working with and Saving data with Pandas',4,60),
-    (4000123,3000101,'Working with Numpy Arrays','Numpy 1d Arrays. Numpy 2d Arrays.',5,60),
-    (4000123,3000100,'Foundations of Business Strategy','Explore the underlying theory and frameworks that provide the foundations of a successful business strategy and provide the tools you need to understand that strategy: SWOT, Competitor, Environmental, Five Forces, and Capabilities Analyses, as well as Strategy Maps.',1,60),
-    (4000123,3000100,'Advanced Business Strategy','Learn the tools to analyze strategy across time (competitive dynamics), industries (corporate strategy), geographies (international strategy), and institutions (non-market strategy).',2,60),
-    (4000123,3000100,'Business Growth Strategy','Learn to determine how best to build value, whether by scaling existing markets, entering established markets or creating new markets through innovation and acquisitions.',3,60),
-    (4000123,3000100,'Strategic Planning and Execution','Earn the pillars of strategy execution--analysis, formulation, and implementation--and how to use the 4A model to effectively approach strategy execution.',4,60),
-    (4000123,3000100,'Business Strategy in Practice','The Business Strategy Capstone Project, a comprehensive Strategic Analysis, provides an opportunity for you to synthesize concepts and knowledge from the four prerequisite courses in the specialization.',5,60);
+    (4000124,3000101,'Working with Numpy Arrays','Numpy 1d Arrays. Numpy 2d Arrays.',5,60),
+    (4000125,3000100,'Foundations of Business Strategy','Explore the underlying theory and frameworks that provide the foundations of a successful business strategy and provide the tools you need to understand that strategy: SWOT, Competitor, Environmental, Five Forces, and Capabilities Analyses, as well as Strategy Maps.',1,60),
+    (4000126,3000100,'Advanced Business Strategy','Learn the tools to analyze strategy across time (competitive dynamics), industries (corporate strategy), geographies (international strategy), and institutions (non-market strategy).',2,60),
+    (4000127,3000100,'Business Growth Strategy','Learn to determine how best to build value, whether by scaling existing markets, entering established markets or creating new markets through innovation and acquisitions.',3,60),
+    (4000128,3000100,'Strategic Planning and Execution','Earn the pillars of strategy execution--analysis, formulation, and implementation--and how to use the 4A model to effectively approach strategy execution.',4,60),
+    (4000129,3000100,'Business Strategy in Practice','The Business Strategy Capstone Project, a comprehensive Strategic Analysis, provides an opportunity for you to synthesize concepts and knowledge from the four prerequisite courses in the specialization.',5,60);
 
 INSERT INTO Class_enrollment (student_id, course_id, enrollment_date)
 VALUES (2000100,3000103,'02-05-2020'),
