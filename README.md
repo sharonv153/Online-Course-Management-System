@@ -28,7 +28,6 @@ The online course management system is a project I created to demonstrate my ski
   <li>Creators receive their payout at the beginning of the month for the previous month, meaning on February 5 a creator will receive a payout for the total active subscribers for January</li>
   <li>Each course is separated into Modules</li>
   <li>To avoid keeping students enrolled in an endless class, each course can have up to 10 modules</li>
-  <li></li>
 </ul>
 
 ## Entities
