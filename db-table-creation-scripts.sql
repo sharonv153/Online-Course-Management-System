@@ -78,12 +78,9 @@ CREATE TABLE Assignment (
 CREATE TABLE Exam (
     exam_id INT,
     course_id INT,
-    module_id INT,
     max_points INT,
-    passed BOOLEAN,
     PRIMARY KEY exam_id,
-    FOREIGN KEY course_id REFERENCES Course(course_id),
-    FOREIGN KEY module_id REFERENCES Module(module_id)
+    FOREIGN KEY course_id REFERENCES Course(course_id)
 );
 
 CREATE TABLE Assignment_submission (
