@@ -1,4 +1,3 @@
-
 -- Queries to insert data into all the tables
 INSERT INTO Course_creator (creator_id, first_name, last_name, birth_date, email)
 VALUES (1000100, 'Alicia', 'Pearce', '06-13-1992', 'AliciaKPearce@gmail.com'),
@@ -61,12 +60,12 @@ VALUES (4000100,3000106,'Introduction to Social Media Marketing','You will learn
     (4000121,3000101,'Python Data Structures','Lists and Tuples. Sets. Dictionaries',2,60),
     (4000122,3000101,'Python Programming Fundamentals','Conditions and Branching. Loops. Functions. Objects and Classes.',3,60),
     (4000123,3000101,'Working with Data in Python','Reading files with open. Writing files with open. Loading data with Pandas. Working with and Saving data with Pandas',4,60),
-    (4000124,3000101,'Working with Numpy Arrays','Numpy 1d Arrays. Numpy 2d Arrays.',5,60),
-    (4000125,3000100,'Foundations of Business Strategy','Explore the underlying theory and frameworks that provide the foundations of a successful business strategy and provide the tools you need to understand that strategy: SWOT, Competitor, Environmental, Five Forces, and Capabilities Analyses, as well as Strategy Maps.',1,60),
-    (4000126,3000100,'Advanced Business Strategy','Learn the tools to analyze strategy across time (competitive dynamics), industries (corporate strategy), geographies (international strategy), and institutions (non-market strategy).',2,60),
-    (4000127,3000100,'Business Growth Strategy','Learn to determine how best to build value, whether by scaling existing markets, entering established markets or creating new markets through innovation and acquisitions.',3,60),
-    (4000128,3000100,'Strategic Planning and Execution','Earn the pillars of strategy execution--analysis, formulation, and implementation--and how to use the 4A model to effectively approach strategy execution.',4,60),
-    (4000129,3000100,'Business Strategy in Practice','The Business Strategy Capstone Project, a comprehensive Strategic Analysis, provides an opportunity for you to synthesize concepts and knowledge from the four prerequisite courses in the specialization.',5,60);
+    (4000123,3000101,'Working with Numpy Arrays','Numpy 1d Arrays. Numpy 2d Arrays.',5,60),
+    (4000123,3000100,'Foundations of Business Strategy','Explore the underlying theory and frameworks that provide the foundations of a successful business strategy and provide the tools you need to understand that strategy: SWOT, Competitor, Environmental, Five Forces, and Capabilities Analyses, as well as Strategy Maps.',1,60),
+    (4000123,3000100,'Advanced Business Strategy','Learn the tools to analyze strategy across time (competitive dynamics), industries (corporate strategy), geographies (international strategy), and institutions (non-market strategy).',2,60),
+    (4000123,3000100,'Business Growth Strategy','Learn to determine how best to build value, whether by scaling existing markets, entering established markets or creating new markets through innovation and acquisitions.',3,60),
+    (4000123,3000100,'Strategic Planning and Execution','Earn the pillars of strategy execution--analysis, formulation, and implementation--and how to use the 4A model to effectively approach strategy execution.',4,60),
+    (4000123,3000100,'Business Strategy in Practice','The Business Strategy Capstone Project, a comprehensive Strategic Analysis, provides an opportunity for you to synthesize concepts and knowledge from the four prerequisite courses in the specialization.',5,60);
 
 INSERT INTO Class_enrollment (student_id, course_id, enrollment_date)
 VALUES (2000100,3000103,'02-05-2020'),
@@ -86,6 +85,7 @@ VALUES (2000100,3000103,'02-05-2020'),
     (2000112,3000106,'05-28-2020');
     (2000113,3000105,'06-01-2020'),
     (2000110,3000103,'10-23-2020'),
+    (2000100,3000106,'03-20-2020');
 
 INSERT INTO Invoice (invoice_id, student_id, payment_total, payment_date)
 VALUES (500000,2000100,20,'02-05-2020'),
@@ -159,26 +159,102 @@ VALUES (6000100,3000100,100)
     (6000123,3000106,100);
 
 INSERT INTO Assignment_submission (assignment_id, student_id, scored_points, submission_date, submission_time)
-VALUES ()
-    ()
-    ();
+VALUES (5000100,2000100,3000106,4000100,40,'04-25-2020','11:00'),
+    (5000113,2000116,3000103,4000113,45,'04-30-2020','22:00'),
+    (5000109,2000104,3000104,4000110,75,'05-30-2020','22:00'),
+    (5000113,2000118,3000103,4000114,50,'07-15-2020','11:00'),
+    (5000101,2000100,3000106,4000101,60,'05-15-2020','14:00'),
+    (5000100,2000113,3000106,4000100,45,'09-12-2020','12:00'),
+    (5000114,2000116,3000103,4000114,50,'05-20-2020','18:00'),
+    (5000124,2000119,3000100,4000125,45,'04-26-2020','20:00'),
+    (5000102,2000100,3000106,4000102,50,'05-25-2020','09:00'),
+    (5000100,2000112,3000106,4000100,50,'06-28-2020','08:00'),
+    (5000110,2000104,3000104,4000111,50,'06-18-2020','18:00'),
+    (5000103,2000100,3000106,4000103,55,'06-01-2020','12:00'),
+    (5000114,2000118,3000103,4000115,50,'07-30-2020','10:00'),
+    (5000101,2000113,3000106,4000101,40,'09-30-2020','09:30'),
+    (5000104,2000100,3000106,4000104,60,'06-20-2020','13:00'),
+    (5000119,2000100,3000101,4000120,60,'07-05-2020','16:00'),
+    (5000111,2000104,3000104,4000112,70,'07-03-2020','19:00'),
+    (5000109,2000101,3000104,4000110,60,'06-12-2020','19:00'),
+    (5000120,2000100,3000101,4000121,55,'08-01-2020','08:00'),
+    (5000105,2000113,3000105,4000106,66,'10-18-2020','19:00'),
+    (5000110,2000101,3000104,4000111,75,'06-30-2020','23:00'),
+    (5000111,2000101,3000104,4000112,70,'07-15-2020','17:00');
+
 
 INSERT INTO Exam_submission (exam_id, student_id, scored_points, submission_date, submission_time)
-VALUES ()
-    ()
-    ();
+VALUES (3000106,6000120,2000100,75	,'05-20-2020','20:00'),
+    (3000103,6000108,2000116,100,'05-10-2020','20:00'),
+    (3000106,6000120,2000113,65	,'09-20-2020','07:30'),
+    (3000106,6000121,2000100,85	,'05-30-2020','16:00'),
+    (3000104,6000112,2000104,82	,'06-15-2020','22:00'),
+    (3000103,6000108,2000118,87	,'08-02-2020','13:00'),
+    (3000106,6000120,2000112,75	,'07-22-2020','07:00'),
+    (3000106,6000122,2000100,90	,'06-19-2020','18:00'),
+    (3000104,6000113,2000104,90	,'07-15-2020','18:00'),
+    (3000106,6000123,2000100,100,'08-05-2020','21:00'),
+    (3000104,6000112,2000101,98	,'07-01-2020','22:00');
+
 
 INSERT INTO Module_completion ( module_id, student_id, completed, completion_date, total_points_earned)
-VALUES ()
-    ()
-    ();
+VALUES (3000100,4000125,2000119,1,'04-26-2020',60),
+    (3000101,4000120,2000100,1,'07-05-2020',60),
+    (3000101,4000121,2000100,1,'08-01-2020',60),
+    (3000103,4000113,2000116,1,'04-30-2020',50),
+    (3000103,4000114,2000118,1,'07-15-2020',50),
+    (3000103,4000114,2000116,1,'05-20-2020',50),
+    (3000103,4000115,2000118,1,'07-30-2020',50),
+    (3000104,4000110,2000104,1,'05-30-2020',75),
+    (3000104,4000110,2000101,1,'06-12-2020',75),
+    (3000104,4000111,2000104,1,'06-18-2020',75),
+    (3000104,4000111,2000101,1,'06-30-2020',75),
+    (3000104,4000112,2000104,1,'07-03-2020',75),
+    (3000104,4000112,2000101,1,'07-15-2020',75),
+    (3000105,4000106,2000113,1,'10-18-2020',60),
+    (3000106,4000100,2000100,1,'04-25-2020',60),
+    (3000106,4000100,2000113,1,'09-12-2020',60),
+    (3000106,4000100,2000112,1,'06-28-2020',60),
+    (3000106,4000101,2000100,1,'05-15-2020',60),
+    (3000106,4000101,2000113,1,'09-30-2020',60),
+    (3000106,4000102,2000100,1,'05-25-2020',60),
+    (3000106,4000103,2000100,1,'06-01-2020',60),
+    (3000106,4000104,2000100,1,'06-20-2020',60);
 
-INSERT INTO Course_subscribers (course_id, student_id, course_creator, creator_earning_per_subscriber)
-VALUES ()
-    ()
-    ();
-
-INSERT INTO Student_Activity (student_id, course_id, creator_id, invoice_id, activity_date, student_course_status)
-VALUES ()
-    ()
-    ();
+INSERT INTO Student_Activity (student_id, course_id, activity_date, student_course_status)
+VALUES (3000103,2000116,'03-28-2020',"Enrolled"),
+    (3000100,2000119,'04-20-2020',"Enrolled"),
+    (3000106,2000100,'04-25-2020',"Enrolled"),
+    (3000100,2000119,'04-26-2020',"Dropped"),
+    (3000103,2000116,'04-30-2020',"Enrolled"),
+    (3000106,2000100,'04-30-2020',"Enrolled"),
+    (3000106,2000100,'05-11-2020',"Enrolled"),
+    (3000103,2000116,'05-12-2020',"Enrolled"),
+    (3000106,2000100,'05-15-2020',"Enrolled"),
+    (3000103,2000116,'05-20-2020',"Enrolled"),
+    (3000106,2000100,'05-25-2020',"Enrolled"),
+    (3000104,2000104,'05-28-2020',"Enrolled"),
+    (3000104,2000104,'05-30-2020',"Enrolled"),
+    (3000106,2000100,'06-01-2020',"Enrolled"),
+    (3000104,2000101,'06-09-2020',"Enrolled"),
+    (3000104,2000104,'06-10-2020',"Enrolled"),
+    (3000104,2000101,'06-12-2020',"Enrolled"),
+    (3000104,2000104,'06-18-2020',"Enrolled"),
+    (3000106,2000100,'06-20-2020',"Enrolled"),
+    (3000106,2000112,'06-28-2020',"Enrolled"),
+    (3000104,2000101,'06-30-2020',"Enrolled"),
+    (3000106,2000112,'07-02-2020',"Enrolled"),
+    (3000104,2000104,'07-03-2020',"Enrolled"),
+    (3000101,2000100,'07-05-2020',"Enrolled"),
+    (3000103,2000118,'07-10-2020',"Enrolled"),
+    (3000103,2000118,'07-15-2020',"Enrolled"),
+    (3000104,2000101,'07-15-2020',"Enrolled"),
+    (3000103,2000118,'07-22-2020',"Enrolled"),
+    (3000103,2000118,'07-30-2020',"Enrolled"),
+    (3000106,2000113,'09-12-2020',"Enrolled"),
+    (3000106,2000113,'09-22-2020',"Enrolled"),
+    (3000106,2000113,'09-30-2020',"Enrolled"),
+    (3000105,2000113,'10-10-2020',"Enrolled"),
+    (3000105,2000113,'10-15-2020',"Enrolled"),
+    (3000105,2000113,'10-18-2020',"Enrolled"),
+    (3000101,2000100,'08-01-2020',"Completed");
