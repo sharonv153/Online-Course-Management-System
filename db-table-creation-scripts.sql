@@ -2,18 +2,17 @@
 CREATE DATABASE online_course_management;
 
 -- Queries to create the tables
-CREATE TABLE Course_creator (
-    creator_id INT,
+CREATE TABLE Online_Courses.db_datawriter.Course_creator (
+    creator_id INT PRIMARY KEY,
     first_name VARCHAR(255),
     last_name VARCHAR(255),
     birth_date DATE,
-    email VARCHAR(255),
-    PRIMARY KEY creator_id
+    email VARCHAR(255)
 );
 
-CREATE TABLE Student (
-    student_id INT,
-    firstn_name VARCHAR(255) NOT NULL,
+CREATE TABLE Online_Courses.db_datawriter.Student (
+    student_id INT PRIMARY KEY,
+    first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255),
     birth_date DATE,
     email VARCHAR(255),
@@ -22,116 +21,111 @@ CREATE TABLE Student (
     city VARCHAR(255),
     state CHAR(2),
     zip CHAR(5),
-    PRIMARY KEY student_id
 );
 
-CREATE TABLE Course (
-    course_id INT,
+CREATE TABLE Online_Courses.db_datawriter.Course (
+    course_id INT PRIMARY KEY,
     course_title VARCHAR(255),
     course_description VARCHAR(255),
     department VARCHAR(255),
     total_points INT,
     course_status VARCHAR(255),
-    creator_id INT,
-    PRIMARY KEY course_id,
-    FOREIGN KEY creator_id REFERENCES Course_creator(creator_id)
+	creator_id INT,
+    CONSTRAINT fk_creator_id FOREIGN KEY (creator_id) REFERENCES Online_Courses.db_datawriter.Course_creator(creator_id)
 );
 
-CREATE TABLE Module (
-    module_id INT,
+CREATE TABLE Online_Courses.db_datawriter.Module (
+    module_id INT PRIMARY KEY,
     course_id INT,
     module_title VARCHAR(255),
     module_description VARCHAR(255),
     section_number INT,
     total_points INT,
-    PRIMARY KEY module_int,
-    FOREIGN KEY course_id REFERENCES Course(course_id)
+    CONSTRAINT fk_module_course FOREIGN KEY (course_id) REFERENCES Online_Courses.db_datawriter.Course(course_id)
 );
 
-CREATE TABLE Class_enrollment (
+CREATE TABLE Online_Courses.db_datawriter.Class_enrollment (
     student_id INT,
     course_id INT,
     enrollment_date DATE,
-    FOREIGN KEY student_id REFERENCES Student(student_id),
-    FOREIGN KEY course_id REFERENCES Course(course_id)
+    CONSTRAINT fk_enrollment_student FOREIGN KEY (student_id) REFERENCES Online_Courses.db_datawriter.Student(student_id),
+    CONSTRAINT fk_enrollment_course FOREIGN KEY (course_id) REFERENCES Online_Courses.db_datawriter.Course(course_id)
 );
 
-CREATE TABLE Invoice (
-    invoice_id INT,
+CREATE TABLE Online_Courses.db_datawriter.Invoice (
+    invoice_id INT PRIMARY KEY,
     student_id INT,
-    payment_total FLOAT(8, 2),
+    payment_total DECIMAL(8,2),
     payment_date DATE,
-    PRIMARY KEY invoice_id,
-    FOREIGN KEY student_id REFERENCES Student(student_id)
+    CONSTRAINT fk_invoice_student FOREIGN KEY (student_id) REFERENCES Online_Courses.db_datawriter.Student(student_id)
 );
 
-CREATE TABLE Assignment (
-    assignment_id INT,
+CREATE TABLE Online_Courses.db_datawriter.Assignment (
+    assignment_id INT PRIMARY KEY,
     course_id INT,
     module_id INT,
     max_points INT,
-    PRIMARY KEY assignment_id,
-    FOREIGN KEY course_id REFERENCES Course(course_id),
-    FOREIGN KEY module_id REFERENCES Module(module_id)
+    CONSTRAINT fk_assignment_course FOREIGN KEY (course_id) REFERENCES Online_Courses.db_datawriter.Course(course_id),
+    CONSTRAINT fk_assignment_module FOREIGN KEY (module_id) REFERENCES Online_Courses.db_datawriter.Module(module_id)
 );
 
-CREATE TABLE Exam (
-    exam_id INT,
+CREATE TABLE Online_Courses.db_datawriter.Exam (
+    exam_id INT PRIMARY KEY,
     course_id INT,
+    module_id INT,
     max_points INT,
-    PRIMARY KEY exam_id,
-    FOREIGN KEY course_id REFERENCES Course(course_id)
+    passed BIT, /*Because there's not Boolean option in SQL server use the BIT option where 1 = yes & 0 = no*/
+    CONSTRAINT fk_exam_course FOREIGN KEY (course_id) REFERENCES Online_Courses.db_datawriter.Course(course_id),
+    CONSTRAINT fk_exam_module FOREIGN KEY (module_id) REFERENCES Online_Courses.db_datawriter.Module(module_id)
 );
 
-CREATE TABLE Assignment_submission (
+CREATE TABLE Online_Courses.db_datawriter.Assignment_submission (
     assignment_id INT,
     student_id INT,
-    scored_points FLOAT(6,2),
+    scored_points DECIMAL(6,2),
     submission_date DATE,
     submission_time TIME,
-    FOREIGN KEY assignment_id REFERENCES Assignment(assignment_id),
-    FOREIGN KEY student_id REFERENCES Student(student_id)
+    CONSTRAINT fk_submission_assignment FOREIGN KEY (assignment_id) REFERENCES Online_Courses.db_datawriter.Assignment(assignment_id),
+    CONSTRAINT fk_submission_student FOREIGN KEY (student_id) REFERENCES Online_Courses.db_datawriter.Student(student_id)
 );
 
-CREATE TABLE Exam_submission (
+CREATE TABLE Online_Courses.db_datawriter.Exam_submission (
     exam_id INT,
     student_id INT,
-    scored_points FLOAT(6,2),
+    scored_points DECIMAL(6,2),
     submission_date DATE,
     submission_time TIME,
-    FOREIGN KEY exam_id REFERENCES Exam(exam_id),
-    FOREIGN KEY student_id REFERENCES Student(student_id)
+    CONSTRAINT fk_submission_exam FOREIGN KEY (exam_id) REFERENCES Online_Courses.db_datawriter.Exam(exam_id),
+    CONSTRAINT fk_submission_exam_student FOREIGN KEY (student_id) REFERENCES Online_Courses.db_datawriter.Student(student_id)
 );
 
-CREATE TABLE Module_completion (
+CREATE TABLE Online_Courses.db_datawriter.Module_completion (
     module_id INT,
     student_id INT,
-    completed BOOLEAN,
+    completed BIT,
     completion_date DATE,
-    total_points_earned FLOAT(6,2),
-    FOREIGN KEY module_id REFERENCES Module(module_id),
-    FOREIGN KEY student_id REFERENCES Student(student_id)
+    total_points_earned DECIMAL(6,2),
+    CONSTRAINT fk_completion_module FOREIGN KEY (module_id) REFERENCES Online_Courses.db_datawriter.Module(module_id),
+    CONSTRAINT fk_completion_module_student FOREIGN KEY (student_id) REFERENCES Online_Courses.db_datawriter.Student(student_id)
 );
 
-CREATE TABLE Course_subscribers (
+CREATE TABLE Online_Courses.db_datawriter.Course_subscribers (
     course_id INT,
     student_id INT,
     course_creator INT,
-    creator_earning_per_subscriber FLOAT(6,2),
-    FOREIGN KEY course_id REFERENCES Course(course_id),
-    FOREIGN KEY student_id REFERENCES Student(student_id),
-    FOREIGN KEY course_creator REFERENCES Course(creator_id)
+    creator_earning_per_subscriber DECIMAL(6,2),
+    CONSTRAINT fk_subscriber_course FOREIGN KEY (course_id) REFERENCES Online_Courses.db_datawriter.Course(course_id),
+    CONSTRAINT fk_subscriber_student FOREIGN KEY (student_id) REFERENCES Online_Courses.db_datawriter.Student(student_id),
+    CONSTRAINT fk_subscriber_creator FOREIGN KEY (course_creator) REFERENCES Online_Courses.db_datawriter.Course_creator(creator_id)
 );
 
-CREATE TABLE Student_Activity (
+/*DELETE invoice_id & creator_id because it's unnnecesary for this table for this first delete the 
+constraints fk_activity_course_creator & fk_activity_invoice*/
+CREATE TABLE Online_Courses.db_datawriter.Student_Activity (
     student_id INT,
     course_id INT,
-    creator_id INT,
-    invoice_id INT,
     activity_date DATE,
     student_course_status VARCHAR(255),
-    FOREIGN KEY student_id REFERENCES Student(student_id),
-    FOREIGN KEY course_id REFERENCES Course(course_id),
-    FOREIGN KEY creator_id REFERENCES Course_creator (creator_id),
-    FOREIGN KEY invoice_id REFERENCES Invoice(invoice_id)
+    CONSTRAINT fk_activity_student FOREIGN KEY (student_id) REFERENCES Online_Courses.db_datawriter.Student(student_id),
+    CONSTRAINT fk_activity_course FOREIGN KEY (course_id) REFERENCES Online_Courses.db_datawriter.Course(course_id)
 );
