@@ -1,5 +1,13 @@
 # Online Course Management System DBMS 
-The online course management system is a project I created to demonstrate my skills in SQL and my knowledge of database design principles and management. The database shows the data flow of everyday operations for an online course management system. A complete system would be more complex and should include many other areas, like HR. These other areas will be excluded to keep the project simple and to avoid loosing focus of the main objectives. These project was created in SQL Server Management Studio, thus the scripts are written following SQL Server standards.
+Kepler is new business who’s goal is to make education more accessible to everyone. They are working on building a new platform where independent creators can build their own courses. Kepler’s business model is subscription based, which means that users have to subscribe to the platform in order to join a course. Their users have to pay a monthly subscription fee of $20 which allows them to enroll in up to 3 courses at a time. If a user wishes to subscribe to more than 3 courses they would have to compete or drop out from one of the 3 courses they are already enrolled in. 
+
+The company is working on developing their online platform and is requesting help with building their database. For them to launch their platform they need an efficient database that can store all the information for their clients, creators, payment information, and courses. Based on some research and suggestions from their development team the company has decided to use Microsoft SQL Server as their database platform. Thus, they expect the database and queries to be built using T-SQL. 
+
+There are a some important details that the company will be sharing to make the design process easier.
+
+Kepler will share their profits with course creators by giving them $5 per student every month. For a creator to receive a payment the student has to be enrolled in one of their courses and has to have an active subscription. The company pays the creators once month for subscriptions from the previous month. For example, creators will be paid on March for students enrolled in February.
+
+The platform will separate courses into modules, that will be split into lessons. For consistency reasons each course can have up to 10 modules.
 
 ## Objectives
 <ul>
@@ -8,8 +16,7 @@ The online course management system is a project I created to demonstrate my ski
   <li>Build a database that the business can later use to analyze their data and make business decisions</li>
 </ul>
 
-### Some aspects to consider with this platform are the following:
-
+### Important points to consider with this platform are the following:
 <ul>
   <li>The courses are built by independent creators</li>
   <li>Each student pays a flat fee every month of $20</li>
@@ -24,7 +31,8 @@ The online course management system is a project I created to demonstrate my ski
   <li>To avoid keeping students enrolled in an endless class, each course can have up to 10 modules</li>
 </ul>
 
-## Entities
+
+### Entities
 
 <ul>
   <li><em>Students:</em> tracks every student that creates an account on the website. Whether they subscribe or not a unique id is created, and their information is saved.</li>
@@ -42,7 +50,7 @@ The online course management system is a project I created to demonstrate my ski
   <li><em>Course activity:</em> this will track if a student is still enrolled in a course every month and if they have a paid account.</li>
 </ul>
 
-## Views 
+### Views 
 The views have the purpose of collecting and putting data together while computing totals based on other table columns.
 The views in this project were created to avoid duplicating data and reduce the amount of data that gets stored.
 <ul>
