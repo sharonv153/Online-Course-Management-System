@@ -16,7 +16,7 @@ The platform will separate courses into modules, that will be split into lessons
   <li>Build a database that the business can later use to analyze their data and make business decisions</li>
 </ul>
 
-### Important points to consider with this platform are the following:
+### Important points to consider with this platform:
 <ul>
   <li>The courses are built by independent creators</li>
   <li>Each student pays a flat fee every month of $20</li>
