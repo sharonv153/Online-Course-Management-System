@@ -3,7 +3,7 @@ Kepler is new business who’s goal is to make education more accessible to ever
 
 The company is working on developing their online platform and is requesting help with building their database. For them to launch their platform they need an efficient database that can store all the information for their clients, creators, payment information, and courses. Based on some research and suggestions from their development team, the company has decided to use Microsoft SQL Server as their database platform. Thus, they expect the database and queries to be built using T-SQL.
 
-Some important details that the company will be sharing, essential for the database design process are:
+Some important details about the company, essential for the database design process:
 <ul>
   <li>The courses are built by independent creators</li>
   <li>Each student pays a flat fee every month of $20</li>
