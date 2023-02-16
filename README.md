@@ -1,18 +1,11 @@
 # Online Course Management System DBMS 
 The online course management system is a project I created to demonstrate my skills in SQL and my knowledge of database design principles and management. The database shows the data flow of everyday operations for an online course management system. A complete system would be more complex and should include many other areas, like HR. These other areas will be excluded to keep the project simple and to avoid loosing focus of the main objectives. These project was created in SQL Server Management Studio, thus the scripts are written following SQL Server standards.
 
-## Goals
-<ul>
-  <li>Demonstrate my knowledge of database design principles including entities relationships, data flow, and key setup</li>
-  <li>Exhibit knowledge of database managament tools such as SQL Server Managment Studio</li>
-  <li>Prove knowledge of SQL and query scripting</li>
-</ul>
-
 ## Objectives
 <ul>
-  <li>Demonstrate my knowledge of database design principles by designing a database and showing data flow through relationships</li>
-  <li>Show knowledge of SQL by writing queries to create databases and principles of database designs</li>
-  <li>Exhibit knowledge of data manipulation, transformation, and extraction through SQL scripting</li>
+  <li>Design a relational database that holds all the information necessary for an online course platform</li>
+  <li>Utilize the normalization process to build a structure with the essential tables for the business to operate without generating data redundancy</li>
+  <li>Build a database that the business can later use to analyze their data and make business decisions</li>
 </ul>
 
 ### Some aspects to consider with this platform are the following:
