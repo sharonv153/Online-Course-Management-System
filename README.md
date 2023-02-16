@@ -1,4 +1,4 @@
-# Online Course Management System DBMS 
+# Kelpler's Online Courses Database Management System (DBMS)
 Kepler is new business who’s goal is to make education more accessible to everyone. They are working on building a new platform where independent creators can build their own courses. Kepler’s business model is subscription based, which means that users have to subscribe to the platform in order to join a course. Their users have to pay a monthly subscription fee of $20 which allows them to enroll in up to 3 courses at a time. If a user wishes to subscribe to more than 3 courses they would have to compete or drop out from one of the 3 courses they are already enrolled in. 
 
 The company is working on developing their online platform and is requesting help with building their database. For them to launch their platform they need an efficient database that can store all the information for their clients, creators, payment information, and courses. Based on some research and suggestions from their development team the company has decided to use Microsoft SQL Server as their database platform. Thus, they expect the database and queries to be built using T-SQL. 
