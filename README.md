@@ -1,22 +1,9 @@
 # Kelpler's Online Courses Database Management System (DBMS)
-Kepler is new business who’s goal is to make education more accessible to everyone. They are working on building a new platform where independent creators can build their own courses. Kepler’s business model is subscription based, which means that users have to subscribe to the platform in order to join a course. Their users have to pay a monthly subscription fee of $20 which allows them to enroll in up to 3 courses at a time. If a user wishes to subscribe to more than 3 courses they would have to compete or drop out from one of the 3 courses they are already enrolled in. 
+Kepler is new business who’s goal is to make education more accessible to everyone. They are working on building a new platform where independent creators can build their own courses. Kepler’s business model will be subscription based, this means that users have to subscribe to the website to join a course. Their users have to pay a monthly subscription fee of $20, which allows them to enroll in up to 3 courses at a time. If a user wishes to subscribe to more than 3 courses they would have to compete or drop out from one of the 3 courses they are already enrolled in.
 
-The company is working on developing their online platform and is requesting help with building their database. For them to launch their platform they need an efficient database that can store all the information for their clients, creators, payment information, and courses. Based on some research and suggestions from their development team the company has decided to use Microsoft SQL Server as their database platform. Thus, they expect the database and queries to be built using T-SQL. 
+The company is working on developing their online platform and is requesting help with building their database. For them to launch their platform they need an efficient database that can store all the information for their clients, creators, payment information, and courses. Based on some research and suggestions from their development team, the company has decided to use Microsoft SQL Server as their database platform. Thus, they expect the database and queries to be built using T-SQL.
 
-There are a some important details that the company will be sharing to make the design process easier.
-
-Kepler will share their profits with course creators by giving them $5 per student every month. For a creator to receive a payment the student has to be enrolled in one of their courses and has to have an active subscription. The company pays the creators once month for subscriptions from the previous month. For example, creators will be paid on March for students enrolled in February.
-
-The platform will separate courses into modules, that will be split into lessons. For consistency reasons each course can have up to 10 modules.
-
-## Objectives
-<ul>
-  <li>Design a relational database that holds all the information necessary for an online course platform</li>
-  <li>Utilize the normalization process to build a structure with the essential tables for the business to operate without generating data redundancy</li>
-  <li>Build a database that the business can later use to analyze their data and make business decisions</li>
-</ul>
-
-### Important points to consider with this platform:
+Some important details that the company will be sharing, essential for the database design process are:
 <ul>
   <li>The courses are built by independent creators</li>
   <li>Each student pays a flat fee every month of $20</li>
@@ -31,6 +18,12 @@ The platform will separate courses into modules, that will be split into lessons
   <li>To avoid keeping students enrolled in an endless class, each course can have up to 10 modules</li>
 </ul>
 
+## Objectives
+<ul>
+  <li>Design a relational database that holds all the information necessary for an online course platform</li>
+  <li>Utilize the normalization process to build a structure with the essential tables for the business to operate without generating data redundancy</li>
+  <li>Build a database that the business can later use to analyze their data and make business decisions</li>
+</ul>
 
 ### Entities
 
